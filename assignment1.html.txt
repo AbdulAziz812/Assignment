@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Single Page Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Single Page Website</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="hero" id="home">
+    <div class="container text-center">
+      <h1>Welcome to My Single Page Website!</h1>
+      <p>This is a simple example of a single page website built with Bootstrap.</p>
+    </div>
+  </section>
+  
+  <section class="content" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a team of developers who specialize in building responsive, mobile-first websites with Bootstrap.</p>
+    </div>
+  </section>
+  
+  <section class="content" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Web Design</li>
+        <li>Web Development</li>
+        <li>E-commerce Solutions</li>
+        <li>Content Management Systems</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="content" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out to us with any questions or inquiries.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#" class="btn btn-social-icon btn-facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="btn btn-social-icon btn-twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="btn btn-social-icon btn-instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <style>
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.hero {
+  background-color: #007bff;
+  color: white;
+  padding: 100px 0;
+}
+
+.content {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.content h2 {
+  margin-bottom: 30px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+.btn-social-icon {
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  display: block;
+  margin-right: 10px;
+  background-color: #e0e0e0;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-social-icon:hover {
+  background-color: #ccc;
+}
+  </style>
+</head>
+<body>
+  <!-- Your content goes here -->
+</body>
+</html>
