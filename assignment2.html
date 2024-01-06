@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single Page Website</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #users {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    #users li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #users a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+    #users a:hover {
+      text-decoration: underline;
+    }
+    #users p {
+      margin: 0;
+      font-size: 0.8em;
+      color: #666;
+    }
+    #users .actions {
+      display: flex;
+      align-items: center;
+    }
+    #users .actions button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #users .actions button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Users</h1>
+  <ul id="users"></ul>
+
+  <!-- Load the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    // Define a function to fetch users from the JSONPlaceholder API
+    function fetchUsers() {
+      // Use jQuery's getJSON method to fetch the users
+      // and pass a callback function to handle the response
+      $.getJSON('https://jsonplaceholder.typicode.com/users', function(users) {
+        // Loop through each user in the response
+        users.forEach(function(user) {
+          // Create a new list item element
+          var li = $('<li>');
+
+          // Add the user name as a link to the user details page
+          li.append('<a href="#" data-user-id="' + user.id + '">' + user.name + '</a>');
+
+          // Add the user email as a paragraph
+          li.append('<p>' + user.email + '</p>');
+
+          // Create a new div element for the actions
+          var actionsDiv = $('<div class="actions">');
+
+          // Create a new button element for the delete action
+          var deleteButton = $('<button>Delete</button>');
+
+          // Add a click event listener to the delete button
+          deleteButton.on('click', function() {
+            // Remove the list item from the users list
+            li.remove();
+          });
+
+          // Append the delete button to the actions div
+          actionsDiv.append(deleteButton);
+
+          // Append the actions div to the list item
+          li.append(actionsDiv);
+
+          // Append the list item to the users list
+          $('#users').append(li);
+        });
+      });
+    }
+
+    // Call the fetchUsers function to load the users
+    fetchUsers();
+
+    // Add a click event listener to the users list
+    $('#users').on('click', 'a', function(event) {
+      // Prevent the default link behavior
+      event.preventDefault();
+
+      // Get the ID of the clicked user
+      var userId = $(this).data('user-id');
+
+      // Display a message with the user ID
+      alert('User ID: ' + userId);
+    });
+  </script>
+</body>
+</html>
